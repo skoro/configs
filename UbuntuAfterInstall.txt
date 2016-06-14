@@ -1,0 +1,25 @@
+Appearance:
+sudo add-apt-repository -u ppa:noobslab/icons
+sudo add-apt-repository -u ppa:noobslab/themes
+
+sudo apt install unity-tweak-tool
+sudo apt install royal-gtk-theme ultra-flat-icons ultra-flat-theme
+
+Fish:
+sudo apt install fish
+
+Gedit:
+sudo apt install gedit-plugins
+
+Development:
+sudo apt install git subversion
+sudo apt install php5-cli php5-xdebug php5-mcrypt php5-imagick php5-sqlite
+sudo apt install sqlite3
+
+Chat:
+sudo apt remove --purge empathy
+sudo apt install pidgin
+
+Remove exotic fonts:
+sudo apt-get purge fonts-tlwg-waree fonts-tlwg-umpush fonts-tlwg-typo fonts-tlwg-typist fonts-tlwg-typewriter fonts-tlwg-sawasdee fonts-tlwg-purisa fonts-tlwg-norasi fonts-tlwg-mono fonts-tlwg-loma fonts-tlwg-kinnari fonts-tlwg-garuda fonts-tibetan-machine fonts-thai-tlwg fonts-takao-pgothic fonts-sil-padauk fonts-sil-abyssinica fonts-nanum fonts-lklug-sinhala fonts-lao fonts-khmeros-core fonts-kacst-one fonts-kacst
+

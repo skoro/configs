@@ -1,0 +1,98 @@
+#!/bin/sh
+
+KERNREL=$(uname -r)
+
+kernlist() {
+    dpkg -l linux-image-\*-generic |
+        awk '$1 ~ /^ii$/ { sub(/^linux-image-/, "", $2); if ($2 ~ /^[0-9]/) print $2; }' |
+        while read line ; do
+            test $line != $KERNREL && echo $line
+        done
+}
+
+choice2ver() {
+    local choice x
+    choice=$1
+    x=1
+    while test $# != 0 ; do
+        shift
+        if test $x = $choice ; then
+            purge $1
+            break
+        fi
+        x=$((x+1))
+    done
+}
+
+purge() {
+    local x pkgs
+    while [ "$#" != "0" ]; do
+        for x in linux-image linux-headers linux-image-extra ; do
+            name=$x-$1
+            if dpkg -s $name >/dev/null 2>&1 ; then
+                pkgs="$pkgs $name"
+            fi
+        done
+        shift
+    done
+    if [ -z "$pkgs" ]; then
+        return
+    fi
+    echo "WARNING!!! These packages WILL BE DELETED!"
+    echo $pkgs | tr " " "\n"
+    read -p "Are you sure? y/N " answer
+    if test x$answer = x"y" ; then
+        for x in $pkgs ; do
+            apt-get -q -y purge $x
+            if [ "$?" != "0" ]; then
+                echo "Something went wrong..."
+                break
+            fi
+        done
+    fi
+}
+
+### check for root
+if [ `id -u` != 0 ]; then
+    echo "Only root allowed to run $0. Try with: sudo $0"
+    exit 1
+fi
+
+exit=0
+
+while [ $exit = 0 ]; do
+    
+    vers=$(kernlist)
+    if [ -z "$vers" ]; then
+        echo "No kernels to purge"
+        exit 0
+    fi
+    num=1
+    
+    if [ -z "$vers" ]; then
+        exit 0
+    fi
+    
+    echo ""
+    
+    for ver in $vers ; do
+        echo "$num) $ver"
+        num=$((num+1))
+    done
+    
+    echo "a) Purge ALL kernels EXCEPT booted $KERNREL"
+    echo "x) Exit"
+
+    while read choice ; do
+        case $choice in
+            [0-9]*) choice2ver $choice $vers ;;
+            a) purge $vers ;;
+            x) exit=1 ;;
+            *) continue ;;
+        esac
+        break
+    done
+    
+done
+
+
