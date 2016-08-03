@@ -16,6 +16,10 @@ sudo apt install git subversion
 sudo apt install php5-cli php5-xdebug php5-mcrypt php5-imagick php5-sqlite
 sudo apt install sqlite3
 
+Actual nodejs version (4.x lts)
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt install nodejs
+
 Chat:
 sudo apt remove --purge empathy
 sudo apt install pidgin
