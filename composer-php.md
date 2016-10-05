@@ -8,9 +8,16 @@ curl -sS https://getcomposer.org/installer | php
 
 Install composer to user's home:
 ```
-mkdir ~/.local/bin
+mkdir -p ~/.local/bin
 mv composer.phar ~/.local/bin/composer
 chmod +x ~/.local/bin/composer
+```
+
+For Ubuntu 14.04 add these lines to your .profile:
+```
+if [ -d "$HOME/.local/bin" ]; then
+	PATH="$PATH:$HOME/.local/bin"
+fi
 ```
 
 To expose composer's vendor bin directory open your `$HOME/.profile`
