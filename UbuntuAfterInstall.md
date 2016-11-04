@@ -45,6 +45,11 @@ sudo apt-get install lib32stdc++6 lib32z1
 SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="plugdev"
 ```
 
+Fix Android emulator (libGL error: unable to load driver: r600_dri.so)
+```
+export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
+```
+
 Chat:
 ```
 sudo apt remove --purge empathy
