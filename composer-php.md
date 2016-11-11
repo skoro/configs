@@ -6,14 +6,14 @@ Download composer:
 curl -sS https://getcomposer.org/installer | php
 ```
 
-Install composer to user's home:
+Install composer to user's home (Ubuntu 16.04):
 ```
 mkdir -p ~/.local/bin
 mv composer.phar ~/.local/bin/composer
 chmod +x ~/.local/bin/composer
 ```
 
-For Ubuntu 14.04 add these lines to your .profile:
+For Ubuntu 14.04 create dir `mkdir -p ~/.local/bin` add these lines to your .profile:
 ```
 if [ -d "$HOME/.local/bin" ]; then
 	PATH="$PATH:$HOME/.local/bin"
