@@ -1,0 +1,6 @@
+# Create new databases in UTF8 encoding by default.
+
+[mysqld]
+collation-server = utf8mb4_general_ci
+character-set-server = utf8mb4
+
