@@ -13,6 +13,9 @@ Vagrant.configure("2") do |config|
      vb.memory = "800"
   end
   
+  # Permit write to temporary folders by web server.
+  #config.vm.synced_folder "web/sites/default/files", "/vagrant/web/sites/default/files", owner: "www-data", group: "www-data"
+  
   config.vm.provision "shell", inline: <<-SHELL
      apt-get update
      apt-get install -y apache2 libapache2-mod-php php-zip php-curl php-mysql php-xdebug php-gd php-xml git
