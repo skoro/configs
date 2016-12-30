@@ -1,6 +1,12 @@
 # For a complete reference, please see the online documentation at
 # https://docs.vagrantup.com.
 
+# In case of "rejecting i/o input from offline devices" error in
+# guest machine change:
+# - kernel type from linux to ubuntu64
+# - change cpu count to 1
+# - disable I/O APIC feature
+
 # MySQL root's password is "pw"
 
 Vagrant.configure("2") do |config|
