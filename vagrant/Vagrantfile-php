@@ -7,6 +7,13 @@
 # - change cpu count to 1
 # - disable I/O APIC feature
 
+# In case out of memory create swapfile:
+# sudo fallocate -l 1G /swapfile
+# sudo chmod 600 /swapfile
+# sudo mkswap /swapfile
+# sudo swapon /swapfile
+# echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+
 # MySQL root's password is "pw"
 
 Vagrant.configure("2") do |config|
