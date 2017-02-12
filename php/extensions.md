@@ -2,7 +2,7 @@
 
 Requirements before compiling any module:
 ```
-sudo apt install php-pear php5-dev
+sudo apt install build-essential php-pear php5-dev
 ```
 
 ### Event extension:
