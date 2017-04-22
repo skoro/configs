@@ -4,10 +4,10 @@
 
 function __fish_wp_cli_needs_command
     set cmd (commandline -opc)
-    if [ (count $cmd) -eq 1 -a $cmd[1] == 'wp' ]
+    if [ (count $cmd) -eq 1 -a $cmd[1] = 'wp' ]
         return 0
     end
-    if [ (count $cmd) -eq 1 -a $cmd[1] == 'wp.phar' ]
+    if [ (count $cmd) -eq 1 -a $cmd[1] = 'wp.phar' ]
         return 0
     end
     return 1
