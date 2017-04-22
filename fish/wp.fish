@@ -1,6 +1,8 @@
 ###
 ### Wordpress 'wp-cli' competions.
 ###
+### Put this file to $HOME/.config/fish/competions directory.
+###
 
 function __fish_wp_cli_needs_command
     set cmd (commandline -opc)
