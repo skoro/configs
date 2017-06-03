@@ -1,4 +1,5 @@
 # Create new databases in UTF8 encoding by default.
+# Copy this file to /etc/mysql/conf.d/
 
 [mysqld]
 collation-server = utf8mb4_general_ci
