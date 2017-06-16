@@ -49,6 +49,9 @@ Vagrant.configure("2") do |config|
      ( grep .local/bin .profile >/dev/null ) || \
         ( echo 'PATH="$PATH:$HOME/.local/bin"' >> .profile )
      echo 'PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> .profile
+     echo 'composer global require wp-cli/wp-cli' >> composer_install.sh
+     echo 'composer global require laravel/installer' >> composer_install.sh
+     echo 'composer global require squizlabs/php_codesniffer' >> composer_install.sh
      cd /etc/php/7.0/mods-available || exit
      echo 'xdebug.remote_enable=1' >> xdebug.ini
      echo 'xdebug.remote_connect_back=1' >> xdebug.ini
