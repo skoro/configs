@@ -1,3 +1,8 @@
+Disable Apt's recommends packages:
+```
+sudo echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/99local
+```
+
 Appearance:
 ```
 sudo add-apt-repository -u ppa:noobslab/icons
