@@ -33,6 +33,8 @@ Install Drupal and Wordpress command line tools:
 ```
 composer global require drush/drush
 composer global require wp-cli/wp-cli
+composer global require laravel/installer
+composer global require squizlabs/php_codesniffer
 ```
 
 `drush` and `wp` will be available in your command line environment.
