@@ -20,7 +20,7 @@ sudo apt install gedit-plugins
 Web development tools (GIT, Svn, PHP without webserver):
 ```
 sudo apt install git subversion
-sudo apt install php5-cli php5-xdebug php5-mcrypt php5-imagick php5-sqlite
+sudo apt install php-cli php-xdebug php-mcrypt php-imagick php-sqlite
 sudo apt install sqlite3
 ```
 
