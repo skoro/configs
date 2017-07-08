@@ -30,9 +30,9 @@ sudo apt install php-cli php-xdebug php-mcrypt php-imagick php-sqlite3 \
 sudo apt install sqlite3
 ```
 
-Actual nodejs version (4.x lts)
+Actual nodejs version (6.x lts)
 ```
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt install nodejs
 ```
 
