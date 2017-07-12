@@ -8,8 +8,8 @@ Appearance:
 sudo add-apt-repository -u ppa:noobslab/icons
 sudo add-apt-repository -u ppa:noobslab/themes
 
-sudo apt install unity-tweak-tool
 sudo apt install royal-gtk-theme ultra-flat-icons ultra-flat-theme
+sudo apt install flat-remix-icons
 ```
 
 Fish command shell:
