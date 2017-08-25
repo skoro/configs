@@ -1,4 +1,9 @@
+# Put this file to your home dir ($HOME) and
+# rename to .inputrc.
+#
 # Incremental search by UP and DOWN arrow keys.
+#
+
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 "\e[C": forward-char
