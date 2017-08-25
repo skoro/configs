@@ -1,0 +1,10 @@
+# Put this file to your home dir $HOME and rename to .nanorc
+#
+# nano(1) editor configuration.
+#
+
+set autoindent
+set smarthome
+set tabsize 4
+set tabstospaces
+
