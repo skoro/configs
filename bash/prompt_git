@@ -2,22 +2,26 @@ function _prompt_git_branch() {
     local b
     b=$(git branch --no-color 2>/dev/null | grep ^\* | sed 's/^\*[ ]*//')
     [ -z $b ] && return
-    echo $b $(__git_status_count)
+    echo "..:: $b $(__git_status_count) ::.."
 }
 
 function __git_status_count() {
     git status --porcelain=1 | (
-        a=0; # added files
+        u=0; # unknown files
         m=0; # modified
+        a=0; # added to index
         while read line
         do
             if echo $line | grep ^\? >/dev/null; then
-                a=$(( $a + 1 ))
-            elif echo $line | grep ^\M >/dev/null; then
+                u=$(( $u + 1 ))
+            elif echo $line | grep ^M >/dev/null; then
                 m=$(( $m + 1 ))
+            elif echo $line | grep ^A >/dev/null; then
+                a=$(( $a + 1 ))
             fi
         done
-        [ $a -gt 0 ] && echo -n "?$a "
+        [ $u -gt 0 ] && echo -n "?$u "
+        [ $a -gt 0 ] && echo -n "A$a "
         [ $m -gt 0 ] && echo -n "M$m "
     )
 }
