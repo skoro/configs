@@ -1,0 +1,45 @@
+#
+# bash completion for the php 'composer' command.
+#
+
+_php_composer() {
+    local cur prev opts common_opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    
+    #
+    # The basic options.
+    #
+    opts="about archive browse clear-cache clearcache config create-project \
+    depends diagnose dump-autoload dumpautoload exec global help home info \
+    init install licenses list outdated prohibits remove require run-script \
+    search self-update selfupdate show status suggests update upgrade validate \
+    why why-not"
+    
+    if [[ ${cur} == --* ]]; then
+        common_opts=""
+        case "${prev}" in
+            update)
+                opts="--prefer-source --prefer-dist --dry-run --dev --no-dev \
+                --lock --no-custom-installers --no-autoloader --no-scripts \
+                --no-progress --no-suggest --with-dependencies"
+                ;;
+
+            require)
+                opts="--dev --prefer-source --prefer-dist --no-progress \
+                --no-suggest --no-update --no-scripts --update-no-dev \
+                --update-with-dependencies --ignore-platform-reqs \
+                --prefer-stable --prefer-lowest --sort-packages"
+                ;;
+
+            *)
+                ;;
+        esac
+    fi
+    
+    COMPREPLY=( $(compgen -W "$opts" -- ${cur}) )
+    return 0
+}
+complete -F _php_composer composer.phar composer
+
