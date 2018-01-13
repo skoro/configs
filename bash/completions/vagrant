@@ -1,0 +1,34 @@
+#
+# bash completion for the 'vagrant' command
+#
+
+__cmd_vagrant() {
+	local cur prev commands
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    case "${prev}" in
+    	box)
+			commands="add list outdated prune remove repackage update"
+			;;
+
+		plugin)
+			commands="expunge install license list repair uninstall update"
+			;;
+
+		snapshot)
+			commands="delete list pop push restore save"
+			;;
+
+		*)
+		    commands="box connect destroy global-status halt help init login \
+		    package plugin port powershell provision push rdp reload resume share \
+		    snapshot ssh ssh-config status suspend up validate version"
+			;;
+    esac
+
+    COMPREPLY=( $(compgen -W "$commands" -- ${cur}) )
+    return 0
+}
+complete -F __cmd_vagrant vagrant
