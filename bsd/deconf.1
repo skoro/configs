@@ -1,0 +1,30 @@
+.Dd April 12, 2010
+.Dt DECONF 1
+.Sh NAME
+.Nm deconf
+.Nd generate kernel config from dmesg
+.Sh SYNOPSIS
+.Nm
+.Ar kernel-config
+.Sh DESCRIPTION
+.Nm 
+generates a new kernel configuration file from the
+current dmesg output and the current kernel config file,
+.Ar kernel-config.
+.Sh EXAMPLE
+To generate a new kernel config
+.Pa MYCONFIG
+after having booted a GENERIC kernel, run:
+.Bd -literal
+$ cd /usr/src/sys/arch/`uname -m`/conf
+$ dmesg | deconf GENERIC > MYCONF
+.Ed
+.Sh SEE ALSO
+.Xr options 4 ,
+.Xr dmesg 8
+.Sh AUTHORS
+Created by Skorobogatko Oleksii <skorobogatko.oleksii@gmail.com>
+.Sh BUGS
+Lines from dmesg output which not found in 
+.Ar kernel-config
+append to the end of new kernel config.
