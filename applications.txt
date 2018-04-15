@@ -1,0 +1,40 @@
+## Stacer
+
+Home: https://github.com/oguzhaninan/Stacer
+Linux System Optimizer and Monitoring
+
+```
+sudo add-apt-repository ppa:oguzhaninan/stacer
+sudo apt-get update
+sudo apt-get install stacer
+```
+
+## Double commander
+
+Home: https://doublecmd.sourceforge.io/
+Double Commander is a free cross platform open source file manager with
+two panels side by side. It is inspired by Total Commander and features
+some new ideas.
+
+Downloads: https://sourceforge.net/p/doublecmd/wiki/Download/
+Ubuntu repos manual: https://software.opensuse.org/download.html?project=home%3AAlexx2000&package=doublecmd-gtk
+
+Ubuntu: 16.04
+```
+wget -nv https://download.opensuse.org/repositories/home:Alexx2000/xUbuntu_16.04/Release.key -O Release.key
+sudo apt-key add - < Release.key
+sudo apt-get update
+```
+```
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Alexx2000/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/home:Alexx2000.list"
+sudo apt-get update
+sudo apt-get install doublecmd-gtk
+```
+
+## Nextcloud client
+
+```
+sudo add-apt-repository ppa:nextcloud-devs/client
+sudo apt-get update
+sudo apt install nextcloud-client
+```
