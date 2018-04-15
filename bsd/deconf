@@ -1,0 +1,66 @@
+#!/usr/bin/awk -f
+
+BEGIN {
+  progname = "deconf";
+  comment_chars  = "#-#";
+
+  if (ARGC < 2) {
+    print "Usage: " progname " GENERIC_FILE";
+    print "Reading dmesg(8) output from standart input" \
+     " and output config template.";
+    bailout = 1; exit;
+  }
+
+  if ((getline < (gen = ARGV[1])) == -1) {
+    print progname ": " gen ": not found or not readable" > "/dev/stderr";
+    bailout = 1; exit;
+  }
+  close(gen);
+
+  ARGV[1] = "-"; # read output from dmesg from standart input
+}
+
+/^[a-z]+[0-9]+[ ]+at[ ]+[a-z]+[0-9]+/ {
+  sub(/:$/, "", $3);
+  dmesg[$1] = $3;
+}
+
+END {
+  if (bailout) exit(1);
+
+  while(getline < gen) {
+    if (match($0, /^[a-z]+[*?0-9]+[ \t]+at[ \t]+[a-z]+[*?0-9]+/)) {
+	split(substr($0, RSTART, RLENGTH), spec);
+	gdev = ggdev = spec[1]; gwhere = ggwhere = spec[3];
+	matches = 0;
+	sub(/[*?0-9]+$/, "", ggdev);
+	sub(/[*?0-9]+$/, "", ggwhere);
+	for(s in dmesg) {
+	  if ((substr(s, 1, length(s)-1) == ggdev) &&
+	      (substr(dmesg[s], 1, length(dmesg[s])-1) == ggwhere)) {
+	    #print gdev " -> " gwhere " : " s " -> " dmesg[s];
+	    if ((gdev ~ /[*?]+$/ && gwhere ~ /[*?]+$/) ||
+		(gdev == s && gwhere ~ /[*?]+$/)  ||
+		(gdev == s && gwhere == dmesg[s]) ||
+		(gdev ~ /[*?]+$/ && gwhere == dmesg[s])) {
+	      matches++; delete dmesg[s];
+	      continue;
+	    }
+	  }
+	  # phy's can have any parent
+	  if ((substr(s, 1, length(s)-1) == ggdev) && ggwhere == "mii") {
+	    matches++; delete dmesg[s];
+	  }
+	}
+	if (matches == 0) print comment_chars $0; else print;
+    }
+    else print;
+  }
+  close(gen);
+
+  matches = 0; for(s in dmesg) matches++;
+  if (matches) {
+    print "\n# deconfig orphaned records: ";
+    for(s in dmesg) { print "#" s " at " dmesg[s]; }
+  }
+}
