@@ -1,0 +1,8 @@
+#Win10 dark: Just a Copy Windos10
+#by purnomo hadi
+
+active_text_color=#ffffff
+title_font= Sans 9
+show_app_icon=true
+title_alignment=left
+button_layout=O|HMC
