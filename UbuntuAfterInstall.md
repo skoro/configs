@@ -69,5 +69,8 @@ sudo apt install tlp
 
 Remove exotic fonts:
 ```
-sudo apt-get purge fonts-tlwg-\* fonts-tibetan-machine fonts-thai-tlwg fonts-takao-pgothic fonts-sil-padauk fonts-sil-abyssinica fonts-nanum fonts-lklug-sinhala fonts-lao fonts-khmeros-core fonts-kacst-one fonts-kacst
+sudo apt-get purge fonts-tlwg-\* fonts-tibetan-machine fonts-thai-tlwg \
+     fonts-takao-pgothic fonts-sil-padauk fonts-sil-abyssinica fonts-nanum \
+     fonts-lklug-sinhala fonts-lao fonts-khmeros-core fonts-kacst-one \
+     fonts-kacst fonts-lohit-\* fonts-smc\* fonts-telu\* fonts-samyak-\*
 ```
