@@ -1,0 +1,18 @@
+/*
+ * Gnome Shell.
+ *
+ * Shrink title bar for terminal application.
+ *
+ * Put this file to ~/.configs/gtk-3.0/gtk.css
+ */
+headerbar.default-decoration {
+ padding-top: 0px;
+ padding-bottom: 0px;
+ min-height: 0px;
+ font-size: 0.6em;
+}
+
+headerbar.default-decoration button.titlebutton {
+ padding: 0px;
+ min-height: 0px;
+}
