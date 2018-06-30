@@ -38,3 +38,14 @@ sudo add-apt-repository ppa:nextcloud-devs/client
 sudo apt-get update
 sudo apt install nextcloud-client
 ```
+Or from snap:
+```
+snap install nextcloud-client
+```
+
+To fix 'No keychain service':
+```
+sudo apt install seahorse libgnome-keyring0
+snap connect nextcloud-client:password-manager-service
+```
+
