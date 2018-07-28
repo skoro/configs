@@ -25,4 +25,6 @@ for f in $FILES; do
 done
 
 echo "To apply completions you need to relogin."
+echo "If you use Xfce/Gnome/KDE terminal don't forget"
+echo "to enable 'Run command as login shell' option (for Xfce)."
 
