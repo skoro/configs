@@ -19,3 +19,5 @@ set show-all-if-ambiguous On
 "\e[C": forward-char
 "\e[D": backward-char
 
+"\e[1;5D": backward-word    # Ctrl-Left
+"\e[1;5C": forward-word     # Ctrl-Right
