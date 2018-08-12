@@ -72,5 +72,8 @@ Remove exotic fonts:
 sudo apt-get purge fonts-tlwg-\* fonts-tibetan-machine fonts-thai-tlwg \
      fonts-takao-pgothic fonts-sil-padauk fonts-sil-abyssinica fonts-nanum \
      fonts-lklug-sinhala fonts-lao fonts-khmeros-core fonts-kacst-one \
-     fonts-kacst fonts-lohit-\* fonts-smc\* fonts-telu\* fonts-samyak-\*
+     fonts-kacst fonts-lohit-\* fonts-smc\* fonts-telu\* fonts-samyak-\* \
+     fonts-sarai fonts-sahadeva fonts-pagul fonts-orya-extra fonts-noto-cjk \
+     fonts-navilu fonts-nakula fonts-kalapi fonts-guru-extra fonts-beng-extra \
+     fonts-gargi fonts-gubbi fonts-gujr-extra fonts-guru-extra fonts-kalapi
 ```
