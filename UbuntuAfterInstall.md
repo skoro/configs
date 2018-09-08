@@ -3,20 +3,6 @@ Disable Apt's recommends packages:
 sudo echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/99local
 ```
 
-Appearance:
-```
-sudo add-apt-repository -u ppa:noobslab/icons
-sudo add-apt-repository -u ppa:noobslab/themes
-
-sudo apt install royal-gtk-theme ultra-flat-icons ultra-flat-theme
-sudo apt install flat-remix-icons
-```
-
-Fish command shell:
-```
-sudo apt install fish
-```
-
 Gedit useful plugins:
 ```
 sudo apt install gedit-plugins
