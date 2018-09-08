@@ -63,3 +63,12 @@ sudo apt-get purge fonts-tlwg-\* fonts-tibetan-machine fonts-thai-tlwg \
      fonts-navilu fonts-nakula fonts-kalapi fonts-guru-extra fonts-beng-extra \
      fonts-gargi fonts-gubbi fonts-gujr-extra fonts-guru-extra fonts-kalapi
 ```
+
+Enable bitmap fonts (for terminal emulator):
+```
+sudo apt install xfonts-terminus
+cd /etc/fonts/conf.d
+sudo rm -f 70-no-bitmaps.conf
+sudo ln -s /etc/fonts/conf.avail/70-yes-bitmaps.conf .
+sudo dpkg-reconfigure fontconfig
+```
