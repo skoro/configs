@@ -2,7 +2,7 @@
 
 # The script is for installing dot files into
 # user home directory.
-# To apply effect relogin will needed.
+# To apply changes relogin will needed.
 
 DOTFILES="inputrc nanorc"
 

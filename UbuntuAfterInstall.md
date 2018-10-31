@@ -3,20 +3,6 @@ Disable Apt's recommends packages:
 sudo echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/99local
 ```
 
-Appearance:
-```
-sudo add-apt-repository -u ppa:noobslab/icons
-sudo add-apt-repository -u ppa:noobslab/themes
-
-sudo apt install royal-gtk-theme ultra-flat-icons ultra-flat-theme
-sudo apt install flat-remix-icons
-```
-
-Fish command shell:
-```
-sudo apt install fish
-```
-
 Gedit useful plugins:
 ```
 sudo apt install gedit-plugins
@@ -72,5 +58,17 @@ Remove exotic fonts:
 sudo apt-get purge fonts-tlwg-\* fonts-tibetan-machine fonts-thai-tlwg \
      fonts-takao-pgothic fonts-sil-padauk fonts-sil-abyssinica fonts-nanum \
      fonts-lklug-sinhala fonts-lao fonts-khmeros-core fonts-kacst-one \
-     fonts-kacst fonts-lohit-\* fonts-smc\* fonts-telu\* fonts-samyak-\*
+     fonts-kacst fonts-lohit-\* fonts-smc\* fonts-telu\* fonts-samyak-\* \
+     fonts-sarai fonts-sahadeva fonts-pagul fonts-orya-extra fonts-noto-cjk \
+     fonts-navilu fonts-nakula fonts-kalapi fonts-guru-extra fonts-beng-extra \
+     fonts-gargi fonts-gubbi fonts-gujr-extra fonts-guru-extra fonts-kalapi
+```
+
+Enable bitmap fonts (for terminal emulator):
+```
+sudo apt install xfonts-terminus
+cd /etc/fonts/conf.d
+sudo rm -f 70-no-bitmaps.conf
+sudo ln -s /etc/fonts/conf.avail/70-yes-bitmaps.conf .
+sudo dpkg-reconfigure fontconfig
 ```
