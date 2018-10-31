@@ -2,7 +2,8 @@
 
 FILES="composer           \
        vagrant            \
-       wp-completion.bash  \
+       wp-completion.bash \
+       docker-compose     \
        yii"
 
 DEST=$HOME/.config/bash_completion.d
