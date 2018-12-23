@@ -1,0 +1,2 @@
+In `themes` directory are themes for the XFCE4.
+Copy them into your ~/.local/themes dir and use.
