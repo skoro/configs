@@ -49,3 +49,15 @@ sudo apt install seahorse libgnome-keyring0
 snap connect nextcloud-client:password-manager-service
 ```
 
+## Virtual box
+
+Ubuntu repos have the old version. The newer one is in the own VirtualBox repo.
+Details: https://www.virtualbox.org/wiki/Linux_Downloads
+
+Install (root):
+```
+echo 'deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bionic contrib' > /etc/apt/sources.list.d/virtualbox.list
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+apt update
+apt install virtualbox-6.0
+```
