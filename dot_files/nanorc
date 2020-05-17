@@ -50,7 +50,7 @@ set autoindent
 ## (The old form, 'const', is deprecated.)
 
 ## Use cut-to-end-of-line by default.
-# set cut
+set cut
 
 ## Set the line length for wrapping text and justifying paragraphs.
 ## If the value is 0 or less, the wrapping point will be the screen
@@ -74,7 +74,7 @@ set autoindent
 # set matchbrackets "(<[{)>]}"
 
 ## Use the blank line below the titlebar as extra editing space.
-# set morespace
+set morespace
 
 ## Enable mouse support, if available for your system.  When enabled,
 ## mouse clicks can be used to place the cursor, set the mark (with a
@@ -84,7 +84,7 @@ set autoindent
 
 ## Switch on multiple file buffers (inserting a file will put it into
 ## a separate buffer).
-# set multibuffer
+set multibuffer
 
 ## Don't convert files from DOS/Mac format.
 # set noconvert
@@ -105,7 +105,7 @@ set autoindent
 # set operatingdir ""
 
 ## Remember the cursor position in each file for the next editing session.
-# set positionlog
+set positionlog
 ## (The old form, 'poslog', is deprecated.)
 
 ## Preserve the XON and XOFF keys (^Q and ^S).
