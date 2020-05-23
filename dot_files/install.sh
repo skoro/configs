@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # The script is for installing dot files into
-# user home directory.
-# To apply changes relogin will needed.
+# the user home directory.
+# To apply these changes relogin will be needed.
 
-DOTFILES="inputrc nanorc"
+DOTFILES="inputrc nanorc bash_aliases"
 
 for f in $DOTFILES; do
 	dst=$HOME/.$f
