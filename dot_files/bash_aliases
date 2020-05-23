@@ -1,0 +1,16 @@
+#
+# This file must be sourced from your .bashrc
+#
+# Append your aliases here.
+
+# Control cd command behavior.
+alias ..='cd ..'
+alias cd..='cd ..'
+
+# The following aliases are already in .bashrc but they are needed to uncomment.
+# Duplicate them here.
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+
