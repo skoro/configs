@@ -5,6 +5,7 @@
 
 # Control cd command behavior.
 alias ..='cd ..'
+alias ...='cd ../..'
 alias cd..='cd ..'
 
 # The following aliases are already in .bashrc but they are needed to uncomment.
