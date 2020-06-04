@@ -28,7 +28,7 @@ set show-all-if-ambiguous On
 set bell-style none
 
 # Cycle through ambiguous completions instead of list
-"\C-i": menu-complete
+# "\C-i": menu-complete
 
 # History search by pressing Up and Down in the command line.
 "\e[A": history-search-backward
