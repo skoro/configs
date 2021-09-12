@@ -9,6 +9,7 @@
 
 [alias]
     br = branch
+    brc = branch --show-current
     st = status
     ss = status --short
     sd = diff --stat
