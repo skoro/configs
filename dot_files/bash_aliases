@@ -9,10 +9,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias cd..='cd ..'
 
-# The following aliases are already in .bashrc but they are needed to uncomment.
-# Duplicate them here.
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
+# The following aliases are already in .bashrc on Ubuntu.
+# Uncomment these if your OS is not Ubuntu.
+#alias ll='ls -alF'
+#alias la='ls -A'
+#alias l='ls -CF'
 
